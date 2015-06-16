@@ -58,7 +58,7 @@ $(document).ready(
 			for(var j = 0; j < data[category].length; j++)
 			{
 				$('#' + category).append("<div></div>");
-				$('#' + category + ' div:last-child').text(data[category][j].login + " - email: " + data[category][j].email);
+				$('#' + category + ' div:last-child').text((data[category][j].login || "unknown") + " - email: " + (data[category][j].email || "unknown"));
 				$('#' + category + ' div:last-child').append('<span class="button button_remove" id="' + category + '_' + j + '">Remove</span>');
 				if(category == "members")
 				{
