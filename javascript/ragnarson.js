@@ -1,9 +1,6 @@
 $(document).ready(  
   function() {
     var data = JSON.parse('{"owners": [{"login": "john","email": "john@example.com"}],"members": [{"login": "jane","email": "jane@example.com"},{"login": "danny","email": "danny@example.com"},{"login": "fred","email": "fred@example.com"}],"invited": [{"email": "alice@example.com"}]}');
-    var members = "members";
-    var owners = "owners";
-    var invited = "invited";
     refreshAll(); 
 
     $('#add_user').click(function(){
@@ -71,9 +68,9 @@ $(document).ready(
     };
 
     function refreshAll() {
-      refreshCategory(members);
-      refreshCategory(owners);
-      refreshCategory(invited);
+      refreshCategory("members");
+      refreshCategory("owners");
+      refreshCategory("invited");
     };    
   }
   );
