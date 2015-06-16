@@ -1,0 +1,27 @@
+{
+  "owners": [
+    {
+      "login": "john",
+      "email": "john@example.com"
+    }
+  ],
+  "members": [
+    {
+      "login": "jane",
+      "email": "jane@example.com"
+    },
+    {
+      "login": "danny",
+      "email": "danny@example.com"
+    },
+    {
+      "login": "fred",
+      "email": "fred@example.com"
+    }
+  ],
+  "invited": [
+    {
+      "email": "alice@example.com"
+    }
+  ]
+}
