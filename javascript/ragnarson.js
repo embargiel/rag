@@ -4,8 +4,14 @@ $(document).ready(
     refreshAll(); 
 
     $('#add_user').click(function(){
-      $('#user_form').toggle();
+      $('#user_form').fadeIn(400);
+      $('#background_div').show();
     });
+
+    $('#background_div').click(function(){
+      $('#user_form').fadeOut(400);
+      $('#background_div').hide();
+    })
 
     $(document).on('click', '.button_remove', function(){
       var element = $(this).attr("id").split("_");      
@@ -40,8 +46,9 @@ $(document).ready(
           {           
             type = "owners"
           } 
-          data[invited].push( {"login":login, "email":email, "type":type});         
-          refreshCategory(invited);
+          data["invited"].push( {"login":login, "email":email, "type":type});         
+          refreshCategory("invited");
+          $('#background_div').hide();
         }           
       });
       ev.preventDefault();          
@@ -53,14 +60,14 @@ $(document).ready(
       {
         $('#' + category).append("<div></div>");
         $('#' + category + ' div:last-child').text((data[category][j].login || "unknown") + " - email: " + (data[category][j].email || "unknown"));
-        $('#' + category + ' div:last-child').append('<span class="button button_remove" id="' + category + '_' + j + '">Remove</span>');
+        $('#' + category + ' div:last-child').append('<i class="fa fa-times button_remove" id="' + category + '_' + j + '"><span class="hint">Remove</span></i>');
         if(category == "members")
         {
-          $('#' + category + ' div:last-child').append('<span class="button button_edit" id="edit_' + category + '_' + j + '">Upgrade to owners</span>');
+          $('#' + category + ' div:last-child').append('<i class="fa fa-pencil-square-o button_edit" id="edit_' + category + '_' + j + '"><span class="hint">Upgrade</span></i>');
         }
         else if(category == "owners")
         {
-          $('#' + category + ' div:last-child').append('<span class="button button_edit" id="edit_' + category + '_' + j + '">Downgrade to members</span>');
+          $('#' + category + ' div:last-child').append('<i class="fa fa-pencil-square-o button_edit" id="edit_' + category + '_' + j + '"><span class="hint">Downgrade</span></i>');
         }
       }
     };
@@ -71,4 +78,4 @@ $(document).ready(
       refreshCategory("invited");
     };    
   }
-  );
+);

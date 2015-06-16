@@ -42,20 +42,26 @@ section .container div div{
   border-bottom: 2px solid darkgrey;
   margin-bottom: 0px
 }
-.button_remove{
-  display: inline-block;
-  width: 70px;
-  padding: 1px 0px;
-  margin-left: 20px
+.white_button{
+  background-color: white;
+  border-bottom: 2px solid white;
 }
-.button_edit{
-  display: inline-block;
-  width: 180px;
-  padding: 1px 0px;
-  margin-left: 20px
+.button_remove, .button_edit{
+  font-size: 20px;
+  margin-left: 20px;
+  cursor: pointer;
+  position: relative;
 }
 #user_form{
   padding: 20px;
+  position: absolute;
+  top: 43px;
+  right: 30px;
+  background-color: lightgray;
+  z-index: 2;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
 }
 #user_form div{
   margin: 5px;
@@ -63,4 +69,33 @@ section .container div div{
 .label_size{
   width: 100px;
   display: inline-block;
+}
+#add_user{
+  position: absolute;
+  right: 30px;
+  top: 5px;
+}
+#background_div{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  cursor: pointer;
+  z-index: 1;
+  display: none;
+}
+.hint{
+  display: none;
+  position: absolute;
+  top: -25px;
+  left: -20px;
+  background-color: gray;
+  border-radius: 4px;
+  font-size: 12px;
+  color: white;
+  padding: 5px;
+}
+.button_edit:hover .hint, .button_remove:hover .hint{
+  display: inherit;
 }
