@@ -1,66 +1,66 @@
 body{
-	margin: 0px;
+  margin: 0px;
 }
 .top{
-	position: relative;
-	height: 50px;
-	border-bottom: 2px solid black;
+  position: relative;
+  height: 50px;
+  border-bottom: 2px solid black;
 }
 .top .title{
-	font-weight: bold;
-	padding: 15px;
-	font-size: 20px;
-	text-align: center;
+  font-weight: bold;
+  padding: 15px;
+  font-size: 20px;
+  text-align: center;
 }
 section.content{
-	padding-top: 10px;
+  padding-top: 10px;
 }
 section .container{
-	position: relative;
-	padding: 0px 20px 20px 20px;
-	border-bottom: 1px solid black;
+  position: relative;
+  padding: 0px 20px 20px 20px;
+  border-bottom: 1px solid black;
 }
 section .container div div{
-	padding: 5px 0px;
+  padding: 5px 0px;
 }
 .hidden{
-	display: none;
+  display: none;
 }
 .button{
-	width: 120px;
-	background-color: lightgray;
-	border-radius: 4px;
-	cursor: pointer;
-	text-align: center;
-	padding: 10px 0px;
-	border: 0px;
-	border-bottom: 2px solid lightgray;
-	font: inherit;
-	font-size: 16px;
+  width: 120px;
+  background-color: lightgray;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  padding: 10px 0px;
+  border: 0px;
+  border-bottom: 2px solid lightgray;
+  font: inherit;
+  font-size: 16px;
 }
 .button:hover{
-	border-bottom: 2px solid darkgrey;
-	margin-bottom: 0px
+  border-bottom: 2px solid darkgrey;
+  margin-bottom: 0px
 }
 .button_remove{
-	display: inline-block;
-	width: 70px;
-	padding: 1px 0px;
-	margin-left: 20px
+  display: inline-block;
+  width: 70px;
+  padding: 1px 0px;
+  margin-left: 20px
 }
 .button_edit{
-	display: inline-block;
-	width: 180px;
-	padding: 1px 0px;
-	margin-left: 20px
+  display: inline-block;
+  width: 180px;
+  padding: 1px 0px;
+  margin-left: 20px
 }
 #user_form{
-	padding: 20px;
+  padding: 20px;
 }
 #user_form div{
-	margin: 5px;
+  margin: 5px;
 }
 .label_size{
-	width: 100px;
-	display: inline-block;
+  width: 100px;
+  display: inline-block;
 }
