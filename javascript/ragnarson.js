@@ -16,7 +16,7 @@ $(document).ready(
 			refreshCategory(element[0]);
 		});
 
-		$('.button_edit').click(function(){
+		$(document).on("click", ".button_edit", function(){
 			var element = $(this).attr("id").split("_");	
 			var login = data[element[1]][element[2]].login
 			var email = data[element[1]][element[2]].email
@@ -47,7 +47,6 @@ $(document).ready(
 					}	
 					data[invited].push( {"login":login, "email":email, "type":type});					
 					refreshCategory(invited);
-					console.log(data);
         }           
 			});
 			ev.preventDefault();     			
