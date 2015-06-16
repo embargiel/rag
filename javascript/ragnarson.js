@@ -4,9 +4,7 @@ $(document).ready(
 		var members = "members";
 		var owners = "owners";
 		var invited = "invited";
-		refreshCategory(members);
-		refreshCategory(owners);
-		refreshCategory(invited);		
+		refreshAll();	
 
 		$('#add_user').click(function(){
 			$('#user_form').toggle();
@@ -14,9 +12,24 @@ $(document).ready(
 
 		$('.button_remove').click(function(){
 			var element = $(this).attr("id").split("_");			
-			var child = parseInt(element[1]) + 1;
 			data[element[0]].splice(parseInt(element[1]),1);
 			refreshCategory(element[0]);
+		});
+
+		$('.button_edit').click(function(){
+			var element = $(this).attr("id").split("_");	
+			var login = data[element[1]][element[2]].login
+			var email = data[element[1]][element[2]].email
+			if(element[1] == "members")
+			{
+				data.owners.push( {"login":login, "email":email});
+			}
+			else
+			{
+				data.members.push( {"login":login, "email":email});
+			}
+			data[element[1]].splice(parseInt(element[2]),1);
+			refreshAll();
 		});
 
 		$("#form").submit(function (ev) {			
@@ -32,18 +45,13 @@ $(document).ready(
 					{						
 						type = "owners"
 					}	
-					data.invited.push( {"login":login, "email":email, "type":type});
-					printUser();
+					data[invited].push( {"login":login, "email":email, "type":type});					
+					refreshCategory(invited);
+					console.log(data);
         }           
 			});
 			ev.preventDefault();     			
 		});
-
-		function printUser() {			
-			var length = data.invited.length;
-			$('#invited').append("<div></div>");
-			$('#invited div:last-child').text(data.invited[length - 1].login + " - email: " + data.invited[length - 1].email + " - account type: " + data.invited[length - 1].type);		
-		};
 
 		function refreshCategory(category) {
 			$('#' + category + ' div').remove();
@@ -51,8 +59,22 @@ $(document).ready(
 			{
 				$('#' + category).append("<div></div>");
 				$('#' + category + ' div:last-child').text(data[category][j].login + " - email: " + data[category][j].email);
-				$('#' + category + ' div:last-child').append('<span class="button button_remove" id="' + category + '_' + j + '">X</span>');
+				$('#' + category + ' div:last-child').append('<span class="button button_remove" id="' + category + '_' + j + '">Remove</span>');
+				if(category == "members")
+				{
+					$('#' + category + ' div:last-child').append('<span class="button button_edit" id="edit_' + category + '_' + j + '">Upgrade to owners</span>');
+				}
+				else if(category == "owners")
+				{
+					$('#' + category + ' div:last-child').append('<span class="button button_edit" id="edit_' + category + '_' + j + '">Downgrade to members</span>');
+				}
 			}
+		};
+
+		function refreshAll() {
+			refreshCategory(members);
+			refreshCategory(owners);
+			refreshCategory(invited);
 		};		
 	}
 );
