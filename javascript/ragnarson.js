@@ -15,15 +15,13 @@ $(document).ready(
 
     $(document).on('click', '.button_edit', function(){
       var element = $(this).attr("id").split("_");  
-      var login = data[element[1]][element[2]].login
-      var email = data[element[1]][element[2]].email
       if(element[1] == "members")
       {
-        data.owners.push( {"login":login, "email":email});
+        data.owners.push(data[element[1]][element[2]]);
       }
       else
       {
-        data.members.push( {"login":login, "email":email});
+        data.members.push(data[element[1]][element[2]]);
       }
       data[element[1]].splice(parseInt(element[2]),1);
       refreshAll();
