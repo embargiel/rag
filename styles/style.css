@@ -51,6 +51,7 @@ section .container div div{
   margin-left: 20px;
   cursor: pointer;
   position: relative;
+  float: right;
 }
 #user_form{
   padding: 20px;
@@ -98,4 +99,8 @@ section .container div div{
 }
 .button_edit:hover .hint, .button_remove:hover .hint{
   display: inherit;
+}
+#members div, #owners div, #invited div{
+  width: 100%;
+  max-width: 400px;
 }
