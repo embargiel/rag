@@ -20,11 +20,11 @@
         <form id="form" method="post">
           <div>
             <label for="username" class="label_size">Username:</label>
-            <input id="username" required="required"></input>
+            <input id="username" name="log"></input>
           </div>
           <div>
             <label for="username" class="label_size">Email:</label>
-            <input id="email" type="email" required="required"></input>
+            <input id="email" name="email" type="email" required="required"></input>
           </div>
           <div>
             <label for="radio_member">Member</label>
@@ -39,15 +39,27 @@
     <section class="content">
       <div class="container">
         <h3>Category - Owners</h3>
-        <div id="owners"></div>
+        <div id="owners">
+          <table id="owners_table">
+
+          </table>
+        </div>
       </div>
       <div class="container">
         <h3>Category - Members</h3>
-        <div id="members"></div>
+        <div id="members">
+          <table id="members_table">
+            
+          </table>
+        </div>
       </div>
       <div class="container">
         <h3>Invited users</h3>
-        <div id="invited"></div>
+        <div id="invited">
+          <table id="invited_table">
+            
+          </table>
+        </div>
       </div>
     </section>  
   </body>

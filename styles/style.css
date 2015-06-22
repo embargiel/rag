@@ -48,10 +48,8 @@ section .container div div{
 }
 .button_remove, .button_edit{
   font-size: 20px;
-  margin-left: 20px;
   cursor: pointer;
   position: relative;
-  float: right;
 }
 #user_form{
   padding: 20px;
@@ -103,4 +101,14 @@ section .container div div{
 #members div, #owners div, #invited div{
   width: 100%;
   max-width: 400px;
+}
+td{
+  border: 1px solid black;
+  width: 150px;
+  padding: 10px;
+}
+td:nth-child(4), td:nth-child(5), td:nth-child(1){
+  width: 20px;
+  padding: 10px 3px;
+  text-align: center;
 }
